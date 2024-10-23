@@ -1,7 +1,7 @@
-from app import app
+from app import app, db
 
-# with app.app.context(): # После первого запуска эту строку можно удалить
-#    db.create_all() # После первого запуска эту строку можно удалить
+with app.app_context():
+    db.create_all()
 
 if __name__ == "__main__":
     app.run(debug=True)
