@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}
+Удалить аккаунт
+{% endblock %}
+
+{% block content %}
+    <h1>Удалить аккаунт</h1>
+    <form method="post" action="{{ url_for('delete') }}">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+{% endblock %}
