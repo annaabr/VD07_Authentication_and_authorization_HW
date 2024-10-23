@@ -61,3 +61,4 @@ class ChangeUserForm(FlaskForm):
             user = User.query.filter_by(username=username.data).first()
             if user:
                 raise ValidationError('Такое имя уже существует')
+

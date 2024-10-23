@@ -67,7 +67,7 @@ def change_email():
     form = ChangeEmailForm()
     if form.validate_on_submit():
         user = User.query.get(current_user.id)
-        user.email = form.email.dat
+        user.email = form.email.data
         db.session.commit()
         flash('Ваш E-mail был изменен', 'success')
         return redirect(url_for('login'))
@@ -94,3 +94,9 @@ def change_name():
         db.session.commit()
         return redirect(url_for('home'))
     return render_template('change_name.html', form=form, title='Change Name')
+
+#@app.route('/users')
+#def list_users():
+#    users = User.query.all()  # Получаем всех пользователей из базы данных
+#    if users:
+#        return render_template('list_users.html', users=users)
